@@ -40,6 +40,15 @@ open class TagListView: UIView {
         }
     }
     
+      @IBInspectable open dynamic var tagLabelAlignment : NSTextAlignment = .center
+        {
+        didSet {
+            tagViews.forEach {
+                $0.titlelabelAlignment = tagLabelAlignment
+            }
+        }
+    }
+    
     @IBInspectable open dynamic var tagBackgroundColor: UIColor = UIColor.gray {
         didSet {
             tagViews.forEach {
@@ -301,6 +310,7 @@ open class TagListView: UIView {
         tagView.highlightedBackgroundColor = tagHighlightedBackgroundColor
         tagView.selectedBackgroundColor = tagSelectedBackgroundColor
         tagView.titleLineBreakMode = tagLineBreakMode
+        tagView.titlelabelAlignment = tagLabelAlignment
         tagView.cornerRadius = cornerRadius
         tagView.borderWidth = borderWidth
         tagView.borderColor = borderColor

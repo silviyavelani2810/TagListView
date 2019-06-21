@@ -44,6 +44,12 @@ open class TagView: UIButton {
             titleLabel?.lineBreakMode = titleLineBreakMode
         }
     }
+     @IBInspectable open var titlelabelAlignment: NSTextAlignment = .center
+        {
+        didSet {
+            titleLabel?.textAlignment = titlelabelAlignment
+        }
+    }
     @IBInspectable open var paddingY: CGFloat = 2 {
         didSet {
             titleEdgeInsets.top = paddingY
